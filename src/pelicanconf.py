@@ -20,7 +20,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 THEME = "./voidy-bootstrap"
-SITESUBTITLE ='Sub-title that goes underneath site name in jumbotron.'
+SITESUBTITLE ='adventure in open source ocean'
 SITETAG = "Text that's displayed in the title on the home page."
 
 # Extra stylesheets, for bootstrap overrides or additional styling.
@@ -33,27 +33,14 @@ CUSTOM_SCRIPTS_ARTICLE = "sharing_scripts.html"
 # Default sidebar template. Omit this setting for single column mode without sidebar.
 SIDEBAR = "sidebar.html"
 
-SOCIAL = (('Google+', 'http://plus.google.com/userid',
-         'fa fa-google-plus-square fa-fw fa-lg'),
-        ('Twitter', 'https://twitter.com/username',
-         'fa fa-twitter-square fa-fw fa-lg'),
-        ('LinkedIn', 'http://linkedin-url',
-         'fa fa-linkedin-square fa-fw fa-lg'),
-        ('BitBucket', 'http://bitbucket.org/username',
-         'fa fa-bitbucket-square fa-fw fa-lg'),
-        ('GitHub', 'http://github.com/username',
+SOCIAL = (
+        ('GitHub', 'http://github.com/HenryGeek',
          'fa fa-github-square fa-fw fa-lg'),
         )
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = ()
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 15
 
