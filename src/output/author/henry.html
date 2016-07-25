@@ -72,6 +72,43 @@
 </ol>
     <article>
 <abbr class="article-header-date">
+  Mon 25 July 2016
+</abbr> <h1>
+  <a href="https://henrygeek.github.io/nginxyou-hua-si-lu.html" rel="bookmark"
+     title="Permalink to nginx优化思路">
+    nginx优化思路
+  </a>
+</h1><div class="article-header-info">
+  <p>
+      Posted by <a href="https://henrygeek.github.io/author/henry.html">Henry</a>
+    in 
+    <a href="https://henrygeek.github.io/category/nginx.html">
+      nginx</a>
+    &nbsp;&nbsp;
+  </p>
+</div> <!-- /.article-header-info -->
+      <div class="summary">
+		<h2>nginx运行时结构</h2>
+<p>nginx运行时由一个master进程和几个worker进程组成.</p>
+<p>master进程: 主要是管理worker进程,进程间通信,处于用户的命令</p>
+<p>worker进程: 处理用户的请求</p>
+<p>worker进程的数量由worker_processes配置指令控制,那么多少个worker才合适?</p>
+<p>每个worker进程都是单线程的进程,它们会调用各个模块以实现多种多样的功能.
+如果这些模块确认不会出现阻塞式的调用,那么有多少个CPU就应该配置多少个进程.
+反之,如果有可能出现阻塞式调用,那么需要配置稍多一些的worker进程.</p>
+<p>比如:如果业务方面会致使用户请求大量读取本地磁盘上的静态资源文件,而且服务器
+内存较小,以至于大部分的请求访问静态资源文件时都必须读磁盘,而不是内存中的磁
+盘缓存,那么磁盘I/O调用会阻塞住worker进程少量时间,进而导致服务整体性能下降.</p>
+<p>多worker进程可以充分利用多核系统架构,但若worker进程的数量多于CPU内核数,那么
+会增大进程间切换带来的消耗(Linux是抢占时内核).在不确定的情况下,一般配置为CPU
+核数.</p>
+		<p class="content-emphasis"><a href="https://henrygeek.github.io/nginxyou-hua-si-lu.html">
+			Read more... <i class="fa fa-arrow-circle-right fa-fw fa-lg"></i> 
+		</a></p>
+      </div>    </article>
+    <hr />
+    <article>
+<abbr class="article-header-date">
   Tue 21 June 2016
 </abbr> <h1>
   <a href="https://henrygeek.github.io/shen-tou-zi-yuan-wang-zhan.html" rel="bookmark"
@@ -159,6 +196,8 @@
 <ul class="list-unstyled category-links">
   <li><a href="https://henrygeek.github.io/category/docker.html" >
     <i class="fa fa-folder-open fa-fw fa-lg"></i> docker</a></li>
+  <li><a href="https://henrygeek.github.io/category/nginx.html" >
+    <i class="fa fa-folder-open fa-fw fa-lg"></i> nginx</a></li>
   <li><a href="https://henrygeek.github.io/category/security.html" >
     <i class="fa fa-folder-open fa-fw fa-lg"></i> security</a></li>
 </ul>
